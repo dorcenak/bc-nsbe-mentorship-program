@@ -2,10 +2,21 @@ import React, { useState } from 'react';
 import { Calendar, Users, Code, FileText, Briefcase, ExternalLink, Menu, X } from 'lucide-react';
 
 export default function ProgramRoadmap() {
-  const [activeSection, setActiveSection] = useState('syllabus');
+  const [activeSection, setActiveSection] = useState('home');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const sections = [
+    { id: 'home', label: 'Home', icon: FileText },
     { id: 'syllabus', label: 'Syllabus', icon: FileText },
     { id: 'timeline', label: 'Timeline', icon: Calendar },
     { id: 'people', label: 'Mentors & Mentees', icon: Users },
@@ -36,7 +47,7 @@ export default function ProgramRoadmap() {
     {
       mentor: { name: 'Ali Ramazani', role: 'Mentor', specialty: 'Software Engineering, Infrastructure, Artificial Intelligence, Machine Learning' },
       mentees: [
-        { name: 'Alina  Petrosyants', background: 'Computer Science, Digital Media' },
+        { name: 'Alina Petrosyants', background: 'Computer Science, Digital Media' },
         { name: 'Dumisani Chikomo', background: 'Computer Science' },
         { name: 'Naod Ksmu', background: 'Computer Science, Business Administration' },
       ]
@@ -65,7 +76,7 @@ export default function ProgramRoadmap() {
       ]
     },
     {
-      mentor: { name: 'Seedy  Muhammed', role: 'Mentor', specialty: 'Software Engineering, Engineering Physics' },
+      mentor: { name: 'Seedy Muhammed', role: 'Mentor', specialty: 'Software Engineering, Engineering Physics' },
       mentees: [
         { name: 'Aubrey Bradshaw', background: 'ETAD' },
         { name: 'Essey Araya', background: 'Engineering Physics, Computer Science' },
@@ -122,57 +133,129 @@ export default function ProgramRoadmap() {
           {/* Main Content */}
           <main className="flex-1">
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20 min-h-[600px]">
+              {activeSection === 'home' && (
+                <div className="flex flex-col items-center justify-center text-center py-12">
+                  <div className="mb-16 min-h-[70vh] flex flex-col items-center justify-center">
+                    <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-purple-500/50">
+                      <Code size={48} className="text-white" />
+                    </div>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                      Welcome to Your Learning Hub
+                    </h2>
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
+                      Find everything you need for a successful journey in mastering Data Structures & Algorithms
+                    </p>
+                  </div>
+
+                  <div className="grid md:grid-cols-2 gap-6 max-w-4xl w-full">
+                    <div 
+                      className="bg-white/5 rounded-xl p-6 border border-purple-500/20 hover:bg-white/10 transition-all duration-500"
+                      style={{
+                        opacity: scrollY > 100 ? 1 : 0,
+                        transform: scrollY > 100 ? 'translateY(0)' : 'translateY(30px)',
+                        pointerEvents: scrollY > 100 ? 'auto' : 'none'
+                      }}
+                    >
+                      <Calendar className="text-purple-400 mb-3" size={32} />
+                      <h3 className="text-xl font-bold text-white mb-2">Structured Timeline</h3>
+                      <p className="text-gray-400">Follow our weekly curriculum designed to build your skills progressively</p>
+                    </div>
+
+                    <div 
+                      className="bg-white/5 rounded-xl p-6 border border-purple-500/20 hover:bg-white/10 transition-all duration-500"
+                      style={{
+                        opacity: scrollY > 150 ? 1 : 0,
+                        transform: scrollY > 150 ? 'translateY(0)' : 'translateY(30px)',
+                        pointerEvents: scrollY > 150 ? 'auto' : 'none'
+                      }}
+                    >
+                      <Users className="text-purple-400 mb-3" size={32} />
+                      <h3 className="text-xl font-bold text-white mb-2">Expert Mentorship</h3>
+                      <p className="text-gray-400">Get guidance from experienced mentors throughout your journey</p>
+                    </div>
+
+                    <div 
+                      className="bg-white/5 rounded-xl p-6 border border-purple-500/20 hover:bg-white/10 transition-all duration-500"
+                      style={{
+                        opacity: scrollY > 200 ? 1 : 0,
+                        transform: scrollY > 200 ? 'translateY(0)' : 'translateY(30px)',
+                        pointerEvents: scrollY > 200 ? 'auto' : 'none'
+                      }}
+                    >
+                      <Code className="text-purple-400 mb-3" size={32} />
+                      <h3 className="text-xl font-bold text-white mb-2">Curated Resources</h3>
+                      <p className="text-gray-400">Access handpicked learning materials and coding platforms</p>
+                    </div>
+
+                    <div 
+                      className="bg-white/5 rounded-xl p-6 border border-purple-500/20 hover:bg-white/10 transition-all duration-500"
+                      style={{
+                        opacity: scrollY > 250 ? 1 : 0,
+                        transform: scrollY > 250 ? 'translateY(0)' : 'translateY(30px)',
+                        pointerEvents: scrollY > 250 ? 'auto' : 'none'
+                      }}
+                    >
+                      <Briefcase className="text-purple-400 mb-3" size={32} />
+                      <h3 className="text-xl font-bold text-white mb-2">Career Tools</h3>
+                      <p className="text-gray-400">Templates and resources to help you land your dream job</p>
+                    </div>
+                  </div>
+
+                  <div 
+                    className="mt-12 transition-all duration-500"
+                    style={{
+                      opacity: scrollY > 300 ? 1 : 0,
+                      transform: scrollY > 300 ? 'translateY(0)' : 'translateY(20px)',
+                      pointerEvents: scrollY > 300 ? 'auto' : 'none'
+                    }}
+                  >
+                    <button
+                      onClick={() => setActiveSection('syllabus')}
+                      className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-2xl shadow-purple-500/50 hover:shadow-purple-500/70"
+                    >
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {activeSection === 'syllabus' && (
                 <div>
-                  <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-3xl font-bold text-white flex items-center gap-3">
-                      <FileText className="text-purple-400" />
-                      Syllabus
-                    </h2>
-                    <a
-                      href="https://docs.google.com/document/d/1zknVfJZOoZu_PKT8cIRT7NnXWjeZ4X_6eCVS7BkpYqg/edit?usp=sharing"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
-                    >
-                      Open in Google Docs
-                      <ExternalLink size={16} />
-                    </a>
+                  <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
+                    <FileText className="text-purple-400" />
+                    Syllabus
+                  </h2>
+                  <div className="bg-white/5 rounded-xl p-8 border border-purple-500/20">
+                    <div className="flex flex-col items-center justify-center py-12 text-center">
+                      <FileText size={64} className="text-purple-400 mb-4" />
+                      <h3 className="text-2xl font-bold text-white mb-4">Program Syllabus</h3>
+                      <p className="text-gray-300 mb-8 max-w-lg">
+                        Access the complete program syllabus with detailed course materials, learning objectives, and schedule.
+                      </p>
+                      <a
+                        href="https://docs.google.com/document/d/1zknVfJZOoZu_PKT8cIRT7NnXWjeZ4X_6eCVS7BkpYqg/edit?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
+                      >
+                        Open Syllabus in Google Docs
+                        <ExternalLink size={20} />
+                      </a>
+                    </div>
                   </div>
                   
-                  <div className="bg-white/5 rounded-xl p-4 border border-purple-500/20">
-                    {/* Replace the URL below with your actual Google Doc embed URL */}
-                    {true ? (
-                      <div className="bg-white rounded-lg overflow-hidden" style={{ height: '700px' }}>
-                        <iframe
-                          src="https://docs.google.com/document/d/e/2PACX-1vS6f971UPKBfpytmRXDISDvk2_IKZwtpkmADBpi3AEyvPJSTuoS9CKx-ebEQ7JLgAYSH4lOa2ANHzo8/pub?embedded=true"
-                          className="w-full h-full"
-                          frameBorder="0"
-                          title="Program Syllabus"
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex flex-col items-center justify-center py-20 text-center">
-                        <FileText size={64} className="text-purple-400 mb-4" />
-                        <h3 className="text-xl font-bold text-white mb-2">Google Doc Embed Ready</h3>
-                        <p className="text-gray-300 mb-6 max-w-lg">
-                          To display your syllabus here, follow the setup instructions below.
-                        </p>
-                        <div className="bg-white/5 rounded-lg p-6 text-left max-w-2xl border border-purple-500/20">
-                          <p className="text-purple-300 font-semibold mb-3">Setup Instructions:</p>
-                          <ol className="text-gray-300 text-sm space-y-2 list-decimal list-inside">
-                            <li>Open your Google Doc</li>
-                            <li>Click <strong>File → Share → Publish to web</strong></li>
-                            <li>In the dialog, select the <strong>"Embed"</strong> tab</li>
-                            <li>Click <strong>"Publish"</strong></li>
-                            <li>Copy the URL from the iframe src (starts with https://docs.google.com/document/d/e/...)</li>
-                            <li>In the code, change <code className="bg-purple-900/50 px-2 py-1 rounded">false</code> to <code className="bg-purple-900/50 px-2 py-1 rounded">true</code> on line with the conditional</li>
-                            <li>Replace the iframe src URL with your embed URL</li>
-                            <li>Also update the "Open in Google Docs" button URL above</li>
-                          </ol>
-                        </div>
-                      </div>
-                    )}
+                  {/* Navigation */}
+                  <div className="flex justify-end mt-6">
+                    <button
+                      onClick={() => setActiveSection('timeline')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      Next: Timeline
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               )}
@@ -202,6 +285,30 @@ export default function ProgramRoadmap() {
                         </div>
                       </div>
                     ))}
+                  </div>
+                  
+                  {/* Navigation */}
+                  <div className="flex justify-between mt-6">
+                    <button
+                      onClick={() => setActiveSection('syllabus')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 12H5"/>
+                        <path d="m12 19-7-7 7-7"/>
+                      </svg>
+                      Back: Syllabus
+                    </button>
+                    <button
+                      onClick={() => setActiveSection('people')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      Next: Mentors & Mentees
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </button>
                   </div>
                 </div>
               )}
@@ -255,6 +362,30 @@ export default function ProgramRoadmap() {
                       </div>
                     ))}
                   </div>
+                  
+                  {/* Navigation */}
+                  <div className="flex justify-between mt-6">
+                    <button
+                      onClick={() => setActiveSection('timeline')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 12H5"/>
+                        <path d="m12 19-7-7 7-7"/>
+                      </svg>
+                      Back: Timeline
+                    </button>
+                    <button
+                      onClick={() => setActiveSection('resources')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      Next: Learning Resources
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -285,6 +416,30 @@ export default function ProgramRoadmap() {
                       </a>
                     ))}
                   </div>
+                  
+                  {/* Navigation */}
+                  <div className="flex justify-between mt-6">
+                    <button
+                      onClick={() => setActiveSection('people')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 12H5"/>
+                        <path d="m12 19-7-7 7-7"/>
+                      </svg>
+                      Back: Mentors & Mentees
+                    </button>
+                    <button
+                      onClick={() => setActiveSection('templates')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      Next: Career Tools
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"/>
+                        <path d="m12 5 7 7-7 7"/>
+                      </svg>
+                    </button>
+                  </div>
                 </div>
               )}
 
@@ -314,6 +469,20 @@ export default function ProgramRoadmap() {
                         </div>
                       </a>
                     ))}
+                  </div>
+                  
+                  {/* Navigation */}
+                  <div className="flex justify-start mt-6">
+                    <button
+                      onClick={() => setActiveSection('resources')}
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M19 12H5"/>
+                        <path d="m12 19-7-7 7-7"/>
+                      </svg>
+                      Back: Learning Resources
+                    </button>
                   </div>
                 </div>
               )}
