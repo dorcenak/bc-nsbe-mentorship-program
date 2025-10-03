@@ -14,15 +14,15 @@ export default function ProgramRoadmap() {
   ];
 
   const resources = [
-    { name: 'Python for DSA', url: '#', description: 'Comprehensive Python guide for Data Structures & Algorithms' },
+    { name: 'Python for DSA', url: 'https://neetcode.io/courses/lessons/python-for-coding-interviews', description: 'Comprehensive Python guide for Data Structures & Algorithms' },
     { name: 'LeetCode', url: 'https://leetcode.com', description: 'Practice coding problems' },
     { name: 'NeetCode', url: 'https://neetcode.io', description: 'Curated problem lists and solutions' },
-    { name: 'Blind 75', url: 'https://neetcode.io/practice', description: 'Essential 75 LeetCode problems' },
+    { name: 'Blind 75', url: 'https://leetcode.com/problem-list/oizxjoit/', description: 'Essential 75 LeetCode problems' },
   ];
 
   const templates = [
-    { name: 'Resume Template', url: '#', description: 'Professional resume template for tech roles' },
-    { name: 'Application Tracker', url: '#', description: 'Track your job applications efficiently' },
+    { name: 'Resume Template', url: 'https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs', description: 'Professional resume template for tech roles' },
+    { name: 'Application Tracker', url: 'https://docs.google.com/spreadsheets/d/10JLB-zmTe_-UatpRNBypyQPiYbTIN8wAgM8KNbxADeU/edit?gid=451048854#gid=451048854', description: 'Track your job applications efficiently' },
   ];
 
   const timelineData = [
@@ -34,35 +34,42 @@ export default function ProgramRoadmap() {
 
   const mentorGroups = [
     {
-      mentor: { name: 'Mentor Name 1', role: 'Senior Mentor', specialty: 'Backend Engineering' },
+      mentor: { name: 'Ali Ramazani', role: 'Mentor', specialty: 'Software Engineering, Infrastructure, Artificial Intelligence, Machine Learning' },
       mentees: [
-        { name: 'Mentee Name 1', background: 'Computer Science' },
-        { name: 'Mentee Name 2', background: 'Software Engineering' },
-        { name: 'Mentee Name 3', background: 'Data Science' },
+        { name: 'Alina  Petrosyants', background: 'Computer Science, Digital Media' },
+        { name: 'Dumisani Chikomo', background: 'Computer Science' },
+        { name: 'Naod Ksmu', background: 'Computer Science, Business Administration' },
       ]
     },
     {
-      mentor: { name: 'Mentor Name 2', role: 'Mentor', specialty: 'Frontend Development' },
+      mentor: { name: 'Bishal Timalsina', role: 'Mentor', specialty: 'Artificial Intelligence, Machine Learning, Software Development' },
       mentees: [
-        { name: 'Mentee Name 4', background: 'Web Development' },
-        { name: 'Mentee Name 5', background: 'Computer Science' },
-        { name: 'Mentee Name 6', background: 'IT' },
+        { name: 'Puskar Chapagain', background: 'Computer Science, Mathematics' },
+        { name: 'Dieu Merci Nshizirungu', background: 'Computer Science' },
+        { name: 'Mohanad Elagan', background: 'Computer Science, Chemistry' },
       ]
     },
     {
-      mentor: { name: 'Mentor Name 3', role: 'Mentor', specialty: 'Full Stack Engineering' },
+      mentor: { name: 'Nega Demeke', role: 'Mentor', specialty: 'Software Engineering, Open Source' },
       mentees: [
-        { name: 'Mentee Name 7', background: 'Software Engineering' },
-        { name: 'Mentee Name 8', background: 'Computer Science' },
-        { name: 'Mentee Name 9', background: 'Information Systems' },
+        { name: 'Beni Shendera', background: 'Computer Science' },
+        { name: 'Nahom Terrefe', background: 'Computer Science' },
+        { name: 'Dee Munsaka', background: 'Computer Science, ETAD, Accounting' },
       ]
     },
     {
-      mentor: { name: 'Mentor Name 4', role: 'Mentor', specialty: 'System Design' },
+      mentor: { name: 'Veronica Agyapong', role: 'Mentor', specialty: 'Software Engineering, Human-Computer Interaction' },
       mentees: [
-        { name: 'Mentee Name 10', background: 'Computer Engineering' },
-        { name: 'Mentee Name 11', background: 'Computer Science' },
-        { name: 'Mentee Name 12', background: 'Software Development' },
+        { name: 'Dia Paudel', background: 'Computer Science' },
+        { name: 'Hope Michael', background: 'Computer Science, Accounting' },
+      ]
+    },
+    {
+      mentor: { name: 'Seedy  Muhammed', role: 'Mentor', specialty: 'Software Engineering, Engineering Physics' },
+      mentees: [
+        { name: 'Aubrey Bradshaw', background: 'ETAD' },
+        { name: 'Essey Araya', background: 'Engineering Physics, Computer Science' },
+        { name: 'Michael Adebusoye', background: 'Engineering Physics, Computer Science' },
       ]
     },
   ];
@@ -117,24 +124,55 @@ export default function ProgramRoadmap() {
             <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 border border-purple-500/20 min-h-[600px]">
               {activeSection === 'syllabus' && (
                 <div>
-                  <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                    <FileText className="text-purple-400" />
-                    Syllabus
-                  </h2>
-                  <div className="bg-white/5 rounded-xl p-6 border border-purple-500/20">
-                    <p className="text-gray-300 mb-4">
-                      Access the complete program syllabus and course materials.
-                    </p>
+                  <div className="flex justify-between items-center mb-6">
+                    <h2 className="text-3xl font-bold text-white flex items-center gap-3">
+                      <FileText className="text-purple-400" />
+                      Syllabus
+                    </h2>
                     <a
-                      href="#"
-                      className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
+                      href="https://docs.google.com/document/d/1zknVfJZOoZu_PKT8cIRT7NnXWjeZ4X_6eCVS7BkpYqg/edit?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-medium transition-all shadow-lg shadow-purple-500/30 hover:shadow-purple-500/50"
                     >
-                      Open Syllabus
-                      <ExternalLink size={18} />
+                      Open in Google Docs
+                      <ExternalLink size={16} />
                     </a>
-                    <div className="mt-8 text-gray-400 text-sm">
-                      <p className="italic">Replace the # link above with your Google Doc URL</p>
-                    </div>
+                  </div>
+                  
+                  <div className="bg-white/5 rounded-xl p-4 border border-purple-500/20">
+                    {/* Replace the URL below with your actual Google Doc embed URL */}
+                    {true ? (
+                      <div className="bg-white rounded-lg overflow-hidden" style={{ height: '700px' }}>
+                        <iframe
+                          src="https://docs.google.com/document/d/e/2PACX-1vS6f971UPKBfpytmRXDISDvk2_IKZwtpkmADBpi3AEyvPJSTuoS9CKx-ebEQ7JLgAYSH4lOa2ANHzo8/pub?embedded=true"
+                          className="w-full h-full"
+                          frameBorder="0"
+                          title="Program Syllabus"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex flex-col items-center justify-center py-20 text-center">
+                        <FileText size={64} className="text-purple-400 mb-4" />
+                        <h3 className="text-xl font-bold text-white mb-2">Google Doc Embed Ready</h3>
+                        <p className="text-gray-300 mb-6 max-w-lg">
+                          To display your syllabus here, follow the setup instructions below.
+                        </p>
+                        <div className="bg-white/5 rounded-lg p-6 text-left max-w-2xl border border-purple-500/20">
+                          <p className="text-purple-300 font-semibold mb-3">Setup Instructions:</p>
+                          <ol className="text-gray-300 text-sm space-y-2 list-decimal list-inside">
+                            <li>Open your Google Doc</li>
+                            <li>Click <strong>File → Share → Publish to web</strong></li>
+                            <li>In the dialog, select the <strong>"Embed"</strong> tab</li>
+                            <li>Click <strong>"Publish"</strong></li>
+                            <li>Copy the URL from the iframe src (starts with https://docs.google.com/document/d/e/...)</li>
+                            <li>In the code, change <code className="bg-purple-900/50 px-2 py-1 rounded">false</code> to <code className="bg-purple-900/50 px-2 py-1 rounded">true</code> on line with the conditional</li>
+                            <li>Replace the iframe src URL with your embed URL</li>
+                            <li>Also update the "Open in Google Docs" button URL above</li>
+                          </ol>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
