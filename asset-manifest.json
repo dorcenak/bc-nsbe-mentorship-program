@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/bc-nsbe-mentorship-program/static/css/main.45e45e7e.css",
+    "main.js": "/bc-nsbe-mentorship-program/static/js/main.bfa0af18.js",
+    "index.html": "/bc-nsbe-mentorship-program/index.html",
+    "main.45e45e7e.css.map": "/bc-nsbe-mentorship-program/static/css/main.45e45e7e.css.map",
+    "main.bfa0af18.js.map": "/bc-nsbe-mentorship-program/static/js/main.bfa0af18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45e45e7e.css",
+    "static/js/main.bfa0af18.js"
+  ]
+}
