@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/bc-nsbe-mentorship-program/static/css/main.5d1dfcbe.css",
-    "main.js": "/bc-nsbe-mentorship-program/static/js/main.727cdc1e.js",
+    "main.css": "/bc-nsbe-mentorship-program/static/css/main.f4ecb7b2.css",
+    "main.js": "/bc-nsbe-mentorship-program/static/js/main.656a0c94.js",
     "index.html": "/bc-nsbe-mentorship-program/index.html",
-    "main.5d1dfcbe.css.map": "/bc-nsbe-mentorship-program/static/css/main.5d1dfcbe.css.map",
-    "main.727cdc1e.js.map": "/bc-nsbe-mentorship-program/static/js/main.727cdc1e.js.map"
+    "main.f4ecb7b2.css.map": "/bc-nsbe-mentorship-program/static/css/main.f4ecb7b2.css.map",
+    "main.656a0c94.js.map": "/bc-nsbe-mentorship-program/static/js/main.656a0c94.js.map"
   },
   "entrypoints": [
-    "static/css/main.5d1dfcbe.css",
-    "static/js/main.727cdc1e.js"
+    "static/css/main.f4ecb7b2.css",
+    "static/js/main.656a0c94.js"
   ]
 }
