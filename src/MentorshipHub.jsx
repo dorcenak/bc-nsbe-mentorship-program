@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Calendar, Users, Code, FileText, Briefcase, ExternalLink, Menu, X } from 'lucide-react';
 
 export default function ProgramRoadmap() {
@@ -6,7 +6,7 @@ export default function ProgramRoadmap() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
@@ -14,6 +14,10 @@ export default function ProgramRoadmap() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeSection]);
 
   const sections = [
     { id: 'home', label: 'Home', icon: FileText },
@@ -48,7 +52,6 @@ export default function ProgramRoadmap() {
     { week: 'Week 9 - November 30 & December 6', sunday: 'Dynamic Programming', saturday: 'Lab Hours' },
     { week: 'Week 10 - December 7', sunday: 'Backtracking', saturday: 'Lab Hours' },
   ];
-
 
   const mentorGroups = [
     {
@@ -147,10 +150,10 @@ export default function ProgramRoadmap() {
                       <Code size={48} className="text-white" />
                     </div>
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                      Welcome to Your Learning Hub
+                      Mentorship Program Learning Hub
                     </h2>
                     <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-                      Find everything you need for a successful journey in mastering Data Structures & Algorithms
+                      Find everything you need to succeed in the <b>Berea College National Society of Black Engineers</b> mentorship program and secure your dream job!
                     </p>
                   </div>
 
@@ -255,9 +258,10 @@ export default function ProgramRoadmap() {
                   <div className="flex justify-end mt-6">
                     <button
                       onClick={() => setActiveSection('timeline')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
-                      Next: Timeline
+                      <span className="hidden sm:inline">Next: Timeline</span>
+                      <span className="sm:hidden">Next</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
@@ -295,22 +299,24 @@ export default function ProgramRoadmap() {
                   </div>
                   
                   {/* Navigation */}
-                  <div className="flex justify-between mt-6">
+                  <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6">
                     <button
                       onClick={() => setActiveSection('syllabus')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5"/>
                         <path d="m12 19-7-7 7-7"/>
                       </svg>
-                      Back: Syllabus
+                      <span className="hidden sm:inline">Back: Syllabus</span>
+                      <span className="sm:hidden">Back</span>
                     </button>
                     <button
                       onClick={() => setActiveSection('people')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
-                      Next: Mentors & Mentees
+                      <span className="hidden sm:inline">Next: Mentors & Mentees</span>
+                      <span className="sm:hidden">Next</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
@@ -371,22 +377,24 @@ export default function ProgramRoadmap() {
                   </div>
                   
                   {/* Navigation */}
-                  <div className="flex justify-between mt-6">
+                  <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6">
                     <button
                       onClick={() => setActiveSection('timeline')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5"/>
                         <path d="m12 19-7-7 7-7"/>
                       </svg>
-                      Back: Timeline
+                      <span className="hidden sm:inline">Back: Timeline</span>
+                      <span className="sm:hidden">Back</span>
                     </button>
                     <button
                       onClick={() => setActiveSection('resources')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
-                      Next: Learning Resources
+                      <span className="hidden sm:inline">Next: Learning Resources</span>
+                      <span className="sm:hidden">Next</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
@@ -425,22 +433,24 @@ export default function ProgramRoadmap() {
                   </div>
                   
                   {/* Navigation */}
-                  <div className="flex justify-between mt-6">
+                  <div className="flex flex-col sm:flex-row justify-between gap-3 mt-6">
                     <button
                       onClick={() => setActiveSection('people')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5"/>
                         <path d="m12 19-7-7 7-7"/>
                       </svg>
-                      Back: Mentors & Mentees
+                      <span className="hidden sm:inline">Back: Mentors & Mentees</span>
+                      <span className="sm:hidden">Back</span>
                     </button>
                     <button
                       onClick={() => setActiveSection('templates')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
-                      Next: Career Tools
+                      <span className="hidden sm:inline">Next: Career Tools</span>
+                      <span className="sm:hidden">Next</span>
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14"/>
                         <path d="m12 5 7 7-7 7"/>
@@ -482,13 +492,14 @@ export default function ProgramRoadmap() {
                   <div className="flex justify-start mt-6">
                     <button
                       onClick={() => setActiveSection('resources')}
-                      className="flex items-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-300 border border-purple-500/30"
+                      className="flex items-center justify-center gap-2 bg-purple-500/40 hover:bg-purple-600 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-xl text-sm sm:text-base font-medium transition-colors duration-300 border border-purple-500/30"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M19 12H5"/>
                         <path d="m12 19-7-7 7-7"/>
                       </svg>
-                      Back: Learning Resources
+                      <span className="hidden sm:inline">Back: Learning Resources</span>
+                      <span className="sm:hidden">Back</span>
                     </button>
                   </div>
                 </div>
