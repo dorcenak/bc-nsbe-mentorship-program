@@ -37,11 +37,18 @@ export default function ProgramRoadmap() {
   ];
 
   const timelineData = [
-    { week: 'Week 1', sunday: 'Arrays & Hashing Introduction', saturday: 'Practice Session: Easy Problems' },
-    { week: 'Week 2', sunday: 'Two Pointers Technique', saturday: 'Practice Session: Two Pointers' },
-    { week: 'Week 3', sunday: 'Sliding Window', saturday: 'Practice Session: Sliding Window' },
-    { week: 'Week 4', sunday: 'Stack & Queue', saturday: 'Practice Session: Stack Problems' },
+    { week: 'Week 1 - October 5 & 11', sunday: 'Arrays, Sliding Window & Two Pointers', saturday: 'Lab Hours' },
+    { week: 'Week 2 - October 12 & 18', sunday: 'Binary Search & Hashing', saturday: 'Lab Hours' },
+    { week: 'Week 3 - October 19 & 25', sunday: 'Stack & Queue', saturday: 'Lab Hours' },
+    { week: 'Week 4 - October 26 & November 1', sunday: 'Linked List', saturday: 'Lab Hours' },
+    { week: 'Week 5 - November 2 & 8', sunday: 'Heap / Priority Queue', saturday: 'Lab Hours' },
+    { week: 'Week 6 - November 9 & 15', sunday: 'Linked List', saturday: 'Lab Hours' },
+    { week: 'Week 7 - November 16 & 22', sunday: 'Trees', saturday: 'Lab Hours' },
+    { week: 'Week 8 - November 23 & 29', sunday: 'Graphs', saturday: 'Lab Hours' },
+    { week: 'Week 9 - November 30 & December 6', sunday: 'Dynamic Programming', saturday: 'Lab Hours' },
+    { week: 'Week 10 - December 7', sunday: 'Backtracking', saturday: 'Lab Hours' },
   ];
+
 
   const mentorGroups = [
     {
@@ -275,11 +282,11 @@ export default function ProgramRoadmap() {
                         <h3 className="text-xl font-bold text-purple-400 mb-4">{item.week}</h3>
                         <div className="grid md:grid-cols-2 gap-4">
                           <div>
-                            <p className="text-sm text-gray-400 mb-1">Sunday Session</p>
+                            <p className="text-sm text-gray-400 mb-1">Sunday Session: 4:00 PM - 5:30 PM</p>
                             <p className="text-white font-medium">{item.sunday}</p>
                           </div>
                           <div>
-                            <p className="text-sm text-gray-400 mb-1">Saturday Session</p>
+                            <p className="text-sm text-gray-400 mb-1">Saturday Session: 4:00 PM - 6:00 PM</p>
                             <p className="text-white font-medium">{item.saturday}</p>
                           </div>
                         </div>
